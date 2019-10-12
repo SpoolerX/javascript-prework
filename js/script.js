@@ -26,11 +26,27 @@ let playerMove = 'nieznany ruch';
 if(playerInput == '1'){
   playerMove = 'kamień';
 }
-if(playerInput == '2'){
-  playerMove = 'kami2eń';
+else if(playerInput == '2'){
+  playerMove = 'papier';
 }
-if(playerInput == '3'){
-  playerMove = 'kami3eń';
+else{
+  playerMove = 'nożyce';
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+    printMessage('Ty wygrywasz!');
+  }
+  else if (computerMove == 'nożyce' && playerMove == 'kamień'){
+      printMessage('Ty wygrywasz!');
+  }
+  else if (computerMove == 'papier' && playerMove == 'nożyce'){
+    printMessage('Ty wygrywasz!');
+}
+  else if( computerMove ==  playerMove == ){
+    printMessage('Remis');
+  }
+  else if(   playerMove == 'nieznany ruch' ){
+    printMessage('Podaj wynik buraku');
+  }
