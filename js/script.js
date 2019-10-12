@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 function playGame(playerInput){
   clearMessages();
   function getMoveName(argMoveId){
@@ -19,12 +21,15 @@ function playGame(playerInput){
     console.log('displayResult z argumentami:',argComputerMove,argPlayerMove);
   if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
       printMessage('Ty wygrywasz!');
+      ++playerScore;
     }
     else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
         printMessage('Ty wygrywasz!');
+        ++playerScore;
     }
     else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
       printMessage('Ty wygrywasz!');
+      ++playerScore;
   }
     else if(argComputerMove ==  argPlayerMove  ){
       printMessage('Remis');
@@ -34,6 +39,7 @@ function playGame(playerInput){
     }
     else {
       printMessage('Przegrałeś!');
+      ++computerScore;
     }
   }
 
@@ -42,13 +48,19 @@ function playGame(playerInput){
   let playerMove = getMoveName(playerInput);
 
 displayResult(computerMove,playerMove);
+printMessage('Komputer: '+computerScore+' Gracz:'+playerScore)
+
 }
 document.getElementById('play-rock').addEventListener('click', function(){
-  printMessage(playGame(1));
+  playGame(1);
 });
 document.getElementById('play-paper').addEventListener('click', function(){
-  printMessage(playGame(2));
+  playGame(2);
 });
 document.getElementById('play-scissors').addEventListener('click', function(){
-  printMessage(playGame(3));
+  playGame(3);
 });
+
+
+
+
